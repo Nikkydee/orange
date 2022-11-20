@@ -1,5 +1,5 @@
 # OrangeHRMLive
-This is a  Selenium Java TestNG Maven framework that automates a UI Test framework for OrnagrhrmLive. This project uses page object model design principle for easy readability and code maintenance.
+This is a  Selenium Java TestNG Maven framework that automates a UI Test framework for OrangehrmLive. This project uses page object model design principle for easy readability and code maintenance.
 
 ## Built With
 - Selenium Webdriver  
