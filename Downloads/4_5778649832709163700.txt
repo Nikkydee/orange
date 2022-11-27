@@ -1,0 +1,40 @@
+create database db_employee;
+
+use db_employee;
+
+mysql> create TABLE departments(department_id INT NOT NULL AUTO_INCREMENT,
+    -> dept_name VARCHAR(30) NOT NULL,
+    -> description VARCHAR(100) DEFAULT NULL,
+    -> PRIMARY KEY(department_id));
+
+mysql> create TABLE jobs(job_id INT NOT NULL AUTO_INCREMENT,
+    -> job_title VARCHAR(3) NOT NULL,
+    -> min_salary DECIMAL(6,0),
+    -> max_salary DECIMAL(6,0),
+    -> PRIMARY KEY(job_id));
+
+mysql> create TABLE employees(employee_id INT NOT NULL AUTO_INCREMENT,
+    -> first_name VARCHAR(30) NOT NULL,
+    -> last_name VARCHAR(30) NOT NULL,
+    -> email VARCHAR(100) NOT NULL,
+    -> phone_number VARCHAR(20) NOT NULL,
+    -> hire_date DATE NOT NULL,
+    -> job_id INT NOT NULL,
+    -> salary DECIMAL(10,2) DEFAULT NULL,
+    -> commission DECIMAL(10,2) DEFAULT NULL,
+    -> dept_id INT NOT NULL,
+    -> PRIMARY KEY(employee_id),
+    -> FOREIGN KEY(dept_id) REFERENCES departments(department_id),
+    -> FOREIGN KEY(job_id) REFERENCES jobs(job_id));
+
+mysql> show tables;
++---------------------+
+| Tables_in_db_office |
++---------------------+
+| departments         |
+| employees           |
+| jobs                |
++---------------------+
+3 rows in set (0.29 sec)
+
+	
